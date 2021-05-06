@@ -14,7 +14,7 @@ public class Main {
 
         QuadraticEquation quadraticEquation = new QuadraticEquation(a, b, c);
         double delta = quadraticEquation.getDiscriminant();
-        if (delta > 0) {
+        if (delta > 0 && a != 0) {
             System.out.print("Phương trình có 2 nghiệm: " + quadraticEquation.getRoot1() + " và " + quadraticEquation.getRoot2());
         } else if (delta == 0) {
             System.out.print("Phương trình có nghiệm duy nhất: " + quadraticEquation.getRoot2());
