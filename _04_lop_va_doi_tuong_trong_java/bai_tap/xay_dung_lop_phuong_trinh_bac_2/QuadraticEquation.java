@@ -37,4 +37,13 @@ public class QuadraticEquation {
         double root2 = (-this.b - Math.pow(delta, 0.5)) / (2 * this.a);
         return root2;
     }
+    void display() {
+        if (this.getDiscriminant() > 0 && getA() != 0) {
+            System.out.print("Phương trình có 2 nghiệm: " + this.getRoot1() + " và " + this.getRoot2());
+        } else if (this.getDiscriminant() == 0) {
+            System.out.print("Phương trình có nghiệm duy nhất: " + this.getRoot2());
+        } else {
+            System.out.print("Phương trình vô nghiệm.");
+        }
+    }
 }
