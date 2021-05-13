@@ -13,7 +13,7 @@ public class CircleResize extends Circle implements Resizeable{
     }
     @Override
     public void resize(double percent) {
-        double resize = super.getRadius() * (percent/100) + getRadius();
+        double resize = super.getRadius() * Math.sqrt(1 + (percent/100));
         super.setRadius(resize);
     }
 }

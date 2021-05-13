@@ -13,8 +13,8 @@ public class RectangleResize extends Rectangle implements Resizeable {
 
     @Override
     public void resize(double percent) {
-        double resizeWidth = (super.getWidth() * (percent/100)) + super.getWidth();
-        double resizeLength = (super.getLength() * (percent/100)) + super.getLength();
+        double resizeWidth = super.getWidth() * Math.sqrt(1 + (percent/100));
+        double resizeLength = super.getWidth() * Math.sqrt(1 + (percent/100)) * super.getLength()/super.getWidth();
         super.setWidth(resizeWidth);
         super.setLength(resizeLength);
     }

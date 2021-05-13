@@ -9,7 +9,7 @@ public class ResizeableTest {
         shapesTest[1] = new RectangleResize(2, 4);
         shapesTest[2] = new SquareResize(5);
 
-        System.out.println("Area before resize in list: ");
+        System.out.println("Area of element before resize in list: ");
         for (Shape element : shapesTest) {
             if (element instanceof CircleResize) {
                 System.out.println("Circle: " + ((CircleResize) element).getArea());
@@ -20,7 +20,7 @@ public class ResizeableTest {
             }
         }
 
-        System.out.println("Area after resize in list: ");
+        System.out.println("Area of element after resize in list: ");
         for (Shape element : shapesTest) {
             if (element instanceof CircleResize) {
                 ((CircleResize) element).resize(Math.random()*100);
