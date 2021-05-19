@@ -10,25 +10,26 @@ public class CheckPalindrome {
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter any string: ");
         String str = sc.nextLine();
-        Queue queue = new LinkedList();
+        Queue<Character> queue = new LinkedList<>();
         Stack<Character> stack = new Stack<>();
+        boolean check = true;
 
         for (int i = 0; i < str.length(); i++) {
             queue.add(str.charAt(i));
-            stack.push(str.charAt(i));
+            stack.add(str.charAt(i));
         }
-        System.out.println(queue);
-        System.out.println(stack);
-        String reversStringQueue = "";
-        String reversStringStack = "";
 
-        while (!queue.isEmpty() && !stack.isEmpty()) {
-            reversStringQueue = reversStringQueue + queue.remove();
-            reversStringStack = reversStringStack + stack.pop();
+        for (int j = 0; j < (str.length()/2); j++) {
+            if (queue.peek()==stack.peek()) {
+                queue.remove();
+                stack.pop();
+            } else {
+                check = false;
+                break;
+            }
         }
-        System.out.println(reversStringQueue);
-        System.out.println(reversStringStack);
-        if (reversStringQueue.equals(reversStringStack))
+
+        if (check)
             System.out.println("The input String is a palindrome.");
         else
             System.out.println("The input String is not a palindrome.");
